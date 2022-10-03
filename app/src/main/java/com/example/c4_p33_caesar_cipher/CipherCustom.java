@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CipherCustom extends AppCompatActivity {
 
@@ -30,7 +33,13 @@ public class CipherCustom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                try{
-                   result.setText(cipher_custom(shift_string, Integer.parseInt(input2.getText().toString())));
+                   int shift_val = Integer.parseInt(input2.getText().toString());
+                   if (shift_val >= 1 && shift_val <= 25) {
+                       result.setText(cipher_custom(shift_string, shift_val));
+                   }
+                   else {
+                       Toast.makeText(CipherCustom.this, "Shift value must be between 1 and 25", Toast.LENGTH_SHORT).show();
+                   }
                } catch (Exception e){
                    result.setText(cipher_custom(shift_string, 3));
                }
