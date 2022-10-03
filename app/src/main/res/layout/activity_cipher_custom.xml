@@ -41,9 +41,10 @@
         android:id="@+id/cipher"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:text="@string/cipher"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result" />
 
@@ -52,10 +53,13 @@
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:text="@string/back"
         android:onClick="goBack"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cipher" />
+        app:layout_constraintTop_toBottomOf="@+id/cipher"
+        app:layout_constraintVertical_bias="0.137" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
