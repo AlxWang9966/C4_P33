@@ -1,5 +1,6 @@
 package com.example.c4_p33_caesar_cipher;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -54,5 +55,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return result;
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState){
+        outState.putString("result", result.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        result.setText(savedInstanceState.getString("result"));
     }
 }
